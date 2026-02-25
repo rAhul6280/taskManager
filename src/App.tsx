@@ -46,7 +46,7 @@ function App() {
     <TaskContext value={{tasks,addTask,deleteTask,updateTask,toggleIscomplete}}>
         <div className="flex flex-col items-center  w-full  h-screen">
 
-           <h1 className={ `text-center text-8xl text-transparent bg-linear-120 ${showCompTasks?'from-white via bg-green-300 to-green-600':'from-white via-red-200 to-red-600'} bg-clip-text my-14`}>Task Manager</h1>
+           <h1 className={ `text-center text-8xl text-transparent bg-linear-120 ${showCompTasks?'from-white via bg-green-300 to-green-600':'from-white via-red-200 to-red-600'} bg-clip-text my-14 leading-['1.3'] `}>Task Manager</h1>
           <form 
           id="taskInput"
           onSubmit={handleSubmit}
