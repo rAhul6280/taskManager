@@ -85,9 +85,9 @@ function App() {
            
           </div>
           }
-           <button 
+           { tasks &&<button 
            onClick={()=>setShowCompTasks((prev)=>!prev)}
-           className="text-white font-bold hover:underline hover:text-blue-500">{ showCompTasks ?'Show upcomming task':'Show Completed Task'}</button>
+           className="text-white font-bold hover:underline hover:text-blue-500">{ showCompTasks ?'Show upcomming task':'Show Completed Task'}</button>}
         </div>
      </TaskContext>
     </>
