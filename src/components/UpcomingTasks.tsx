@@ -1,4 +1,3 @@
-import React from 'react';
 import TaskList from './taskList';
 import type { TaskType } from '../context/taskContext';
 
