@@ -18,8 +18,9 @@ function TaskList({ tasksName, tasks, showCompleted }: TaskListProps) {
   return (
     <> 
     <style>{`
-      .task-list .task-item { transform: translateY(0) scale(1); opacity: 1; transition-property: transform, opacity, margin, padding, height; transition-duration: 320ms; transition-timing-function: cubic-bezier(.2,.9,.3,1); will-change: transform, opacity; }
-      .task-list.is-closed .task-item { transform: translateY(-8px) scale(0.995); opacity: 0; padding-top: 0; padding-bottom: 0; margin-top: 0; margin-bottom: 0; height: 0; overflow: hidden; }
+      /* stagger fade-in/out of items when collapsing */
+      .task-list .task-item { transform: translateY(0) scale(1); opacity: 1; transition: transform 320ms cubic-bezier(.2,.9,.3,1), opacity 300ms ease; }
+      .task-list.is-closed .task-item { transform: translateY(-8px) scale(0.995); opacity: 0; }
       .task-list.is-closed .task-item:nth-child(1) { transition-delay: 0ms; }
       .task-list.is-closed .task-item:nth-child(2) { transition-delay: 20ms; }
       .task-list.is-closed .task-item:nth-child(3) { transition-delay: 40ms; }
@@ -51,7 +52,7 @@ function TaskList({ tasksName, tasks, showCompleted }: TaskListProps) {
         </button>
       </div>
       </div>
-<div className={`task-list flex flex-col gap-3 overflow-hidden transition-all duration-300 backdrop-blur-sm ${toggleArrow ? 'max-h-96 opacity-100 mt-4 is-open' : 'max-h-0 opacity-0 is-closed'}`}>
+<div className={`task-list flex flex-col gap-3 transition-all duration-300 backdrop-blur-sm ${toggleArrow ? 'opacity-100 mt-4 is-open' : 'opacity-0 mt-0 is-closed'} ${toggleArrow ? '' : 'pointer-events-none'}`}>
         {filteredTasks.length === 0 && (
           <p className="text-center text-gray-400 py-4">
             {showCompleted === null
