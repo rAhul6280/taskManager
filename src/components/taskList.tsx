@@ -52,7 +52,7 @@ function TaskList({ tasksName, tasks, showCompleted }: TaskListProps) {
         </button>
       </div>
       </div>
-<div className={`task-list flex flex-col gap-3 transition-all duration-300 backdrop-blur-sm ${toggleArrow ? 'opacity-100 mt-4 is-open' : 'opacity-0 mt-0 is-closed'} ${toggleArrow ? '' : 'pointer-events-none'}`}>
+<div className={`task-list flex flex-col gap-3 transition-all duration-300 backdrop-blur-sm ${toggleArrow ? 'opacity-100 mt-4 is-open' : 'opacity-0 mt-0 is-closed overflow-hidden max-h-0'}`}>
         {filteredTasks.length === 0 && (
           <p className="text-center text-gray-400 py-4">
             {showCompleted === null
