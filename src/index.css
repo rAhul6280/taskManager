@@ -1,5 +1,20 @@
 @import "tailwindcss";
 *{
-  font-family: 'Times New Roman', Times, serif;
- 
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+
+/* Prevent layout shift when vertical scrollbar appears */
+html {
+  /* Reserve space for scrollbar when it appears (modern browsers) */
+  scrollbar-gutter: stable;
+}
+
+/* Always show vertical scrollbar space to avoid page width change */
+body {
+  overflow-y: scroll;
+  /* dark gradient background */
+  background: linear-gradient(135deg, #1a1a2e 0%, #0f3460 60%, #16213e 100%);
+  color: #fff;
+  min-height: 100vh;
 }
