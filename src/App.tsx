@@ -67,7 +67,7 @@ function App() {
           <h1
             className={`heading-float text-center text-8xl font-black text-transparent bg-linear-120 from-blue-300 via-purple-400 to-pink-500 bg-clip-text my-14 leading-relaxed drop-shadow-2xl tracking-tight`}
           >
-            Task 
+            TodoApp
           </h1>
           <form
             id="taskInput"
